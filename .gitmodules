@@ -1,0 +1,3 @@
+[submodule "arbor"]
+	path = arbor
+	url = git://github.com/samizdatco/arbor.git
