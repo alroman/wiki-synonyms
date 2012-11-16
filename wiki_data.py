@@ -21,10 +21,11 @@ import urllib
 import string
 import sys
 import pprint
+import json
 from xml.dom import minidom
 
 # Pretty print
-pp = pprint.PrettyPrinter(indent = 1, width = 2, depth = 4)
+pp = pprint.PrettyPrinter()
 
 
 def generate_titles(word):
@@ -450,8 +451,8 @@ def get_wiki_data(title):
     # Save the final results
     results = {}
 
-    if(len(categories) != 0):
-        results['Categories'] = categories
+    # if(len(categories) != 0):
+    #     results['Categories'] = categories
 
     results[title] = out_list
 
@@ -482,7 +483,8 @@ def main():
 
     tree_data = get_wiki_data(title)
 
-    pp.pprint(tree_data)
+    print json.dumps(tree_data, sort_keys=True, indent=4)
+    # pp.pprint(tree_data)
     
  
 if __name__ == '__main__':
