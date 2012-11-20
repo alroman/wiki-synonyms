@@ -4,42 +4,25 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 	<title>Arbour demo</title>
-	
+
 	<link href="css/bootstrap.min.css" rel="stylesheet" />
 	<script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script language="javascript" type="text/javascript" src="arbor/lib/arbor.js"></script>
 	<script language="javascript" type="text/javascript" src="arbor/demos/_/graphics.js"></script>
 	<script language="javascript" type="text/javascript" src="arbor/demos/halfviz/src/renderer.js"></script>
-	
-	<style >
+
+	<style type="text/css">
+		body{
+		  margin:0;
+		  padding:20px;
+		  font:12px/17px Arial, sans-serif;
+		  background:#f9f9f9;
+		}
 	</style>
 </head>
 <body>
-	<canvas id="viewport" width="800" height="600"></canvas>
+	<canvas id="viewport" width="1200" height="600"></canvas>
+	<script language="javascript" type="text/javascript" src="js/main.js"></script>
 
-	<script language="javascript" type="text/javascript">
-          // var sys = arbor.ParticleSystem(2600, 512, 0.5);
-          var sys = arbor.ParticleSystem({
-          	repulsion: 1000, 
-          	stiffness: 600,
-          	friction: 0.5,
-          	gravity: true
-          })
-          // sys.screenPadding(20)
-          sys.renderer = Renderer("#viewport");
-          var data = {
-			nodes:{
-				animals:{'color':'red','shape':'square','label':'Animals'},
-				dog:{'color':'green','shape':'dot','label':'dog'},
-				cat:{'color':'blue','shape':'dot','label':'cat'}
-			},
-			edges:{
-				animals:{ dog:{}, cat:{} }
-				}
-		  };
-
-			sys.graft(data);
-
-	</script>
 </body>
 </html>
